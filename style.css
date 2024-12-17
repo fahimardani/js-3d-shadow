@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&family=Satisfy&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: lightblue;
+}
+.container {
+    position: relative;
+    width: 300px;
+    aspect-ratio: 1;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    &:hover span {
+        cursor: pointer;
+        transform: rotate(-30deg) skew(25deg) translateX(calc(1.5px * var(--i))) translateY(calc(-1.5px * var(--i)));
+
+        &:last-child {
+            box-shadow: -50px 50px 30px rgb(0 0 0 / .5);
+        }
+    }
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(frieren.jpg);
+        background-size: cover;
+        transition: .5s;
+        z-index: calc(1 + var(--i));
+
+    }
+}
+figure {
+    bottom: 1rem;
+    position: absolute;
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+  
+    figcaption a {
+      color: #525252;
+      text-decoration: none;
+      margin-left: .5rem;
+      font-size: 1.2rem;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+      &:active {
+        font-size: 1rem;
+      }
+    }
+  }
